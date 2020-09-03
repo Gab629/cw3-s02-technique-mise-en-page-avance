@@ -4,25 +4,235 @@
 /* font-family: 'Bungee Shade', cursive; */
 
 /* LES VARIABLES CSS ICI */
+:root {
+    --font-primaire: 'Cardo', serif;
+    --font-secondaire: 'Bungee Shade', cursive;
+
+    --couleur-primaire: #A7029A;
+    --couleur-noir: #000;
+    --couleur-blanc: #fff;
+
+    --degrade-principal: linear-gradient(36deg, rgba(167, 2, 154, 0.7) 0%, rgba(167, 2, 154, 0) 100%);
+}
+
 
 /*---------------------- Generic ----------------------*/
 
 /* Mettre la ligne universelle pour le box-sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
 
+/* Listes à puces sur tous les LI */
+li {
+    list-style: none;
+}
+
+/* Enlever les marges sur les H1, H2 */
+h1, h2 {
+    margin: 0;
+}
 
 
 /*---------------------- Elements ----------------------*/
 
+body {
+    margin: 0;
+    font: var(--font-primaire);
+}
 
+/*styler les a*/
 
+.content a {
+    color: var(--couleur-blanc);
+    text-decoration: none;
+}
+
+.content a:hover {
+    color: var(--couleur-primaire);
+    text-decoration: underline;
+}
+
+/*styler les H1*/
+h1 {
+    color: var(--couleur-blanc);
+    font-family: var(--font-secondaire);
+    font-size: 36px;
+}
+
+/*styler les H2*/
+
+h2 {
+    color: var(--couleur-blanc);
+    font-family: var(--font-secondaire);
+    font-size: 80px;
+}
 
 
 /*---------------------- Components ----------------------*/
 
+.conteneur {
+    margin: 0 auto;
+    max-width: 1440px;
+}
+
+/* Header */
 
 
+.header-principal {
+    background: var(--couleur-noir);
+    padding-left: 152px;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+}
 
+/* Hero */
 
+.hero p, .hero a {
+    font-size: 24px;
+}
+
+.hero {
+    height: 80vh;
+    background-color: var(--couleur-noir);
+    position: relative;
+}
+
+.hero video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+}
+
+.hero .content {
+    width: 100%;
+    height: 100%;
+
+    background: var(--degrade-principal);
+
+    color: var(--couleur-blanc);
+    font-family: var(--font-primaire);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.hero::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Internet */
+
+.interet {
+    background-image: url("../images/bg-interet.jpg");
+    background-attachment: fixed;
+    padding: 0 0 82px 0;
+}
+
+.interet h3 {
+    font-size: 40px;
+    font-family: var(--font-primaire);
+    margin: 66px 0 0 0;
+}
+
+.interet .conteneur {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cartes {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+}
+
+.interet .conteneur h3{
+    text-transform: uppercase;
+}
+
+.carte {
+    width: 31%;
+
+    background: var(--couleur-blanc);
+
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+
+    margin: 10px 0;
+    padding: 20px;
+
+    text-align: center;
+}
+
+.carte img{
+    width: 151px;
+    height: 151px;
+}
+
+/* Citation */
+
+.citation {
+    height: 404px;
+
+    background-image: url("../images/bg-citation.jpg");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+
+    color: var(--couleur-blanc);
+}
+.citation .conteneur{
+    padding: 0 150px;
+
+}
+
+.citation h3{
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+/* Footer */
+
+.footer-principal{
+    background: var(--couleur-noir);
+    height: 144px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--couleur-blanc);
+}
+
+.footer-principal a{
+    color: var(--couleur-blanc);
+    text-decoration: none;
+}
+
+.footer-principal a:hover{
+    color: var(--couleur-primaire);
+    text-decoration: underline;
+}
+
+.footer-principal .copyright{
+    text-align: center;
+}
 
 /*---------------------- Utilities ----------------------*/
 
